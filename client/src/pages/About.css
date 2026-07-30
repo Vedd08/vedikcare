@@ -1,8 +1,8 @@
 /* ── Story / About Page — Light Theme ── */
 
 .about-page-premium {
-    background-color: #FAF8F5;
-    color: #1A281E;
+    background-color: var(--bg-ivory);
+    color: var(--text-primary);
     font-family: 'Montserrat', sans-serif;
     overflow-x: hidden;
 }
@@ -22,7 +22,7 @@
     font-family: 'Playfair Display', serif;
     font-size: clamp(2.6rem, 4.5vw, 4rem);
     line-height: 1.1;
-    color: #14461B;
+    color: var(--primary);
     margin-bottom: 24px;
     font-weight: 600;
     letter-spacing: -0.02em;
@@ -40,7 +40,7 @@
     font-size: 0.78rem;
     text-transform: uppercase;
     letter-spacing: 0.3em;
-    color: #DCA124;
+    color: var(--accent);
     display: inline-block;
     margin-bottom: 16px;
     font-weight: 600;
@@ -97,7 +97,7 @@
     font-size: 0.82rem;
     text-transform: uppercase;
     letter-spacing: 0.35em;
-    color: #DCA124;
+    color: var(--accent);
     display: block;
     margin-bottom: 28px;
     font-weight: 600;
@@ -107,7 +107,7 @@
     font-family: 'Playfair Display', serif;
     font-size: clamp(3.2rem, 6vw, 5.5rem);
     line-height: 1.08;
-    color: #14461B;
+    color: var(--primary);
     margin-bottom: 32px;
     font-weight: 600;
     letter-spacing: -0.025em;
@@ -210,7 +210,7 @@
 
 .founder-role-premium {
     font-size: 0.9rem;
-    color: #DCA124;
+    color: var(--accent);
     text-transform: uppercase;
     letter-spacing: 0.2em;
     margin-bottom: 32px;
@@ -236,7 +236,7 @@
 }
 
 .founder-highlights-premium svg {
-    color: #14461B;
+    color: var(--primary);
     flex-shrink: 0;
 }
 
@@ -261,12 +261,12 @@
 }
 
 .value-card-premium {
-    background: #FAF8F5;
+    background: var(--surface-white);
     border: 1.5px solid rgba(20,70,27,0.08);
     padding: 50px 28px;
     text-align: center;
-    border-radius: 20px;
-    transition: all 0.4s cubic-bezier(0.165,0.84,0.44,1);
+    border-radius: var(--radius-card);
+    transition: var(--transition);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -294,7 +294,7 @@
 }
 
 .value-icon-premium {
-    color: #14461B;
+    color: var(--primary);
     margin-bottom: 24px;
     transition: transform 0.4s ease;
     background: rgba(20,70,27,0.07);
@@ -314,7 +314,7 @@
 .value-title-premium {
     font-family: 'Playfair Display', serif;
     font-size: 1.4rem;
-    color: #14461B;
+    color: var(--primary);
     margin-bottom: 14px;
     font-weight: 600;
 }

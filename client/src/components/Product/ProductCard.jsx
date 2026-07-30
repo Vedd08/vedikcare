@@ -36,6 +36,9 @@ const ProductCard = ({ product }) => {
       onMouseLeave={() => setHovered(false)}
       onClick={handleCardClick}
       style={{ cursor: 'pointer' }}
+      as={motion.div}
+      whileHover={{ y: -8 }}
+      transition={{ type: "spring", stiffness: 400, damping: 25 }}
     >
       {/* Badge */}
       {product.badge && (

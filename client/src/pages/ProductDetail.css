@@ -1,7 +1,7 @@
 .product-detail-page {
   padding: 120px 0 80px;
   min-height: 100vh;
-  background-color: var(--dark-bg);
+  background-color: var(--bg-ivory);
   color: var(--text-primary);
 }
 
@@ -12,15 +12,15 @@
   justify-content: center;
   min-height: 100vh;
   gap: 20px;
-  background-color: var(--dark-bg);
+  background-color: var(--bg-ivory);
   color: var(--text-primary);
 }
 
 .pd-spinner {
   width: 40px;
   height: 40px;
-  border: 3px solid rgba(212, 175, 55, 0.2);
-  border-top-color: var(--color-gold, #d4af37);
+  border: 3px solid rgba(220, 161, 36, 0.2);
+  border-top-color: var(--accent);
   border-radius: 50%;
 }
 
@@ -39,7 +39,7 @@
 }
 
 .pd-back-link:hover, .pd-back-btn:hover {
-  color: var(--dark-green);
+  color: var(--primary);
   transform: translateX(-5px);
 }
 
@@ -53,9 +53,9 @@
 /* Left Side: Image */
 .pd-image-section {
   position: relative;
-  background: #FFFFFF;
+  background: var(--surface-white);
   border: 1px solid rgba(20, 70, 27, 0.1);
-  border-radius: 24px;
+  border-radius: var(--radius-card);
   padding: 40px;
   display: flex;
   justify-content: center;
@@ -67,10 +67,10 @@
   position: absolute;
   top: 24px;
   left: 24px;
-  background: var(--metallic-gold);
-  color: #FFFFFF;
+  background: var(--accent);
+  color: var(--text-inverse);
   padding: 6px 14px;
-  border-radius: 100px;
+  border-radius: var(--radius-pill);
   font-size: 0.75rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -108,7 +108,7 @@
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  color: var(--dark-green);
+  color: var(--primary);
   font-size: 0.85rem;
   font-weight: 600;
   text-transform: uppercase;
@@ -121,16 +121,14 @@
   font-weight: 400;
   line-height: 1.1;
   margin-bottom: 12px;
-  background: linear-gradient(to right, #14461B, #387042);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: var(--primary);
+  font-family: 'Playfair Display', serif;
 }
 
 .pd-price {
   font-size: 2rem;
   font-weight: 600;
-  color: #B87E0E;
+  color: var(--accent);
   margin-bottom: 24px;
 }
 
@@ -143,7 +141,7 @@
 
 /* Details Box */
 .pd-details-box {
-  background: #FFFFFF;
+  background: var(--surface-white);
   border: 1px solid rgba(20, 70, 27, 0.1);
   border-radius: 16px;
   padding: 24px;
@@ -187,7 +185,7 @@
 }
 
 .pd-features li svg {
-  color: var(--metallic-gold);
+  color: var(--accent);
 }
 
 /* Action Bar */
@@ -220,7 +218,7 @@
 }
 
 .pd-qty-selector button:hover {
-  color: var(--dark-green);
+  color: var(--primary);
 }
 
 .pd-qty-selector span {
@@ -236,10 +234,10 @@
   align-items: center;
   justify-content: center;
   gap: 12px;
-  background: var(--dark-green);
-  color: #FFFFFF;
+  background: var(--primary);
+  color: var(--text-inverse);
   border: none;
-  border-radius: 12px;
+  border-radius: var(--radius-pill);
   font-size: 1.05rem;
   font-weight: 600;
   cursor: pointer;
@@ -249,7 +247,7 @@
 }
 
 .pd-add-to-cart:hover {
-  background: var(--metallic-gold);
+  background: var(--accent);
   transform: translateY(-2px);
   box-shadow: 0 10px 20px rgba(220, 161, 36, 0.25);
 }
@@ -296,7 +294,7 @@
    NUTRITION FACTS TABLE
    ───────────────────────────── */
 .pd-nutrition-wrap {
-  background: #FFFFFF;
+  background: var(--surface-white);
   border: 1.5px solid rgba(20, 70, 27, 0.1);
   border-radius: 16px;
   padding: 24px 24px 16px;
@@ -306,7 +304,7 @@
 .pd-nutrition-heading {
   font-family: 'Playfair Display', serif;
   font-size: 1.4rem;
-  color: #14461B;
+  color: var(--primary);
   margin-bottom: 4px;
   font-weight: 700;
   letter-spacing: -0.01em;
@@ -319,7 +317,7 @@
   letter-spacing: 0.1em;
   font-weight: 600;
   margin-bottom: 16px;
-  border-bottom: 3px solid #14461B;
+  border-bottom: 3px solid var(--primary);
   padding-bottom: 12px;
 }
 
@@ -370,7 +368,7 @@
   gap: 10px;
   font-size: 0.9rem;
   font-weight: 600;
-  color: #14461B;
+  color: var(--primary);
   white-space: nowrap;
 }
 
@@ -388,7 +386,7 @@
 .pd-nut-bar {
   display: block;
   height: 100%;
-  background: linear-gradient(90deg, #14461B, #DCA124);
+  background: linear-gradient(90deg, var(--primary), var(--accent));
   border-radius: 100px;
   transition: width 0.6s ease;
 }
@@ -396,7 +394,7 @@
 .pd-nut-pct {
   font-size: 0.82rem;
   font-weight: 700;
-  color: #DCA124;
+  color: var(--accent);
   text-align: right;
 }
 

@@ -29,8 +29,9 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    background-color: #FFFFFF;
+    background-color: var(--surface-white);
     border: 1px solid rgba(20, 70, 27, 0.12);
+    border-radius: var(--radius-card);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
     cursor: pointer;
     transition: border-color 0.35s ease, transform 0.35s ease, box-shadow 0.35s ease;
@@ -49,13 +50,14 @@
     position: absolute;
     top: 16px;
     left: 16px;
-    background-color: var(--metallic-gold);
-    color: #FFFFFF;
+    background-color: var(--accent);
+    color: var(--text-inverse);
     padding: 5px 14px;
     font-size: 0.72rem;
     font-weight: 700;
     letter-spacing: 0.12em;
     text-transform: uppercase;
+    border-radius: var(--radius-pill);
     z-index: 10;
     font-family: 'Montserrat', sans-serif;
 }
@@ -113,7 +115,7 @@
     font-weight: 700;
     letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: var(--dark-green);
+    color: var(--primary);
     font-family: 'Montserrat', sans-serif;
 }
 
@@ -147,7 +149,7 @@
 }
 
 .pc-leaf {
-    color: var(--metallic-gold);
+    color: var(--accent);
     opacity: 0.7;
 }
 
@@ -197,7 +199,7 @@
     font-family: 'Playfair Display', serif;
     font-size: 1.5rem;
     font-weight: 700;
-    color: #B87E0E;
+    color: var(--accent);
     letter-spacing: -0.02em;
     flex-shrink: 0;
 }
@@ -233,8 +235,8 @@
 }
 
 .pc-qty-btn:hover {
-    background-color: var(--dark-green);
-    color: #FFFFFF;
+    background-color: var(--primary);
+    color: var(--text-inverse);
 }
 
 .pc-qty-val {
@@ -253,10 +255,10 @@
     gap: 7px;
     height: 40px;
     padding: 0 18px;
-    background-color: var(--dark-green);
-    color: #FFFFFF;
+    background-color: var(--primary);
+    color: var(--text-inverse);
     border: none;
-    border-radius: 8px;
+    border-radius: var(--radius-pill);
     font-weight: 700;
     font-size: 0.85rem;
     letter-spacing: 0.04em;
@@ -267,7 +269,7 @@
 }
 
 .pc-add-btn:hover {
-    background-color: var(--metallic-gold);
+    background-color: var(--accent);
     transform: translateY(-2px);
     box-shadow: 0 8px 20px rgba(220, 161, 36, 0.35);
 }
@@ -276,7 +278,7 @@
     font-family: 'Playfair Display', serif;
     font-size: 1.4rem;
     font-weight: 700;
-    color: var(--metallic-gold);
+    color: var(--accent);
     letter-spacing: -0.02em;
     width: 100%;
     text-align: center;

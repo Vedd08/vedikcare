@@ -158,7 +158,13 @@ const About = () => {
               { icon: <Sprout size={32} />, title: 'Deep Rooted', text: 'Deeply rooted in authentic traditions and pure, sustainable sourcing.' },
               { icon: <Recycle size={32} />, title: 'Sustainable', text: 'Committed to minimizing our environmental footprint through eco-friendly practices.' }
             ].map((value, index) => (
-              <motion.div key={index} variants={fadeUp} className="value-card-premium">
+              <motion.div 
+                key={index} 
+                variants={fadeUp} 
+                className="value-card-premium"
+                whileHover={{ scale: 1.05, y: -10 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
                 <div className="value-icon-premium">{value.icon}</div>
                 <h3 className="value-title-premium">{value.title}</h3>
                 <p className="value-text-premium">{value.text}</p>

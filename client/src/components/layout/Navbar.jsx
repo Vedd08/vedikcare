@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Leaf, Menu, X, User } from 'lucide-react';
+import { motion } from 'framer-motion';
 import { useCart } from '../../context/CartContext';
 import './Navbar.css';
 
@@ -43,7 +44,12 @@ const Navbar = () => {
   ];
 
   return (
-    <header className={`minimal-navbar ${scrolled ? 'scrolled' : ''}`}>
+    <motion.header 
+      className={`minimal-navbar ${scrolled ? 'scrolled' : ''}`}
+      initial={{ y: -100, x: "-50%", opacity: 0 }}
+      animate={{ y: 0, x: "-50%", opacity: 1 }}
+      transition={{ duration: 0.8, ease: [0.25, 1, 0.5, 1] }}
+    >
       <div className="nav-container container">
         
         {/* Left Links */}
@@ -112,7 +118,7 @@ const Navbar = () => {
           <Link to="/login" className="btn btn-primary" onClick={() => setMobileMenuOpen(false)}>Sign In</Link>
         </div>
       </div>
-    </header>
+    </motion.header>
   );
 };
 

@@ -1,71 +1,24 @@
-/* Mega Footer Styles */
+/* Footer Styles - Heritage Wellness */
 .mega-footer {
-    background-color: var(--dark-bg);
-    color: var(--text-primary);
-    padding: 100px 0 40px;
-    margin-top: 50px;
-    border-top: 1px solid var(--glass-border);
+    background-color: var(--primary);
+    color: var(--text-inverse);
+    padding: 0 0 40px;
+    margin-top: 80px;
     position: relative;
     overflow: hidden;
 }
 
-/* Massive CTA */
-.footer-massive-cta {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 100px;
-    padding-bottom: 80px;
-    border-bottom: 1px solid var(--glass-border);
-    flex-wrap: wrap; /* Allow wrapping on smaller screens */
-    gap: 40px;
-}
-
-.footer-big-text {
-    font-size: clamp(3rem, 8vw, 10rem); /* Reduced slightly to prevent overflow */
-    line-height: 1;
-    font-family: 'Playfair Display', serif;
-    font-weight: 800;
-    margin: 0;
-    word-break: break-word; /* Ensure text breaks if too long */
-}
-
-.footer-big-text .indent-gold {
-    display: block;
-    padding-left: -2%; /* Reduced padding */
-    color: var(--metallic-gold);
-}
-
-.circle-btn {
-    width: 140px;
-    height: 140px;
-    border-radius: 50%;
-    background-color: var(--metallic-gold);
-    color: #FFFFFF;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    font-size: 1.1rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    transition: var(--transition);
-    text-decoration: none;
-    box-shadow: var(--glow);
-    animation: pulse-glow 3s infinite;
-    flex-shrink: 0; /* Prevent the button from getting squished */
-}
-
-.circle-btn:hover {
-    background-color: var(--dark-green);
-    transform: scale(1.1);
-    animation: none;
+.footer-gold-divider {
+    height: 4px;
+    width: 100%;
+    background-color: var(--accent);
+    margin-bottom: 80px;
 }
 
 /* Standard Footer Grid */
 .footer-grid {
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr 1fr;
+    grid-template-columns: 2fr 1fr 1fr 1.5fr;
     gap: 60px;
     margin-bottom: 80px;
 }
@@ -77,19 +30,20 @@
     text-decoration: none;
 }
 
-.footer-logo-image {
-    height: 120px; /* Make it large and prominent in the footer */
-    width: auto;
-    object-fit: contain;
-    transition: var(--transition);
+.footer-logo-text {
+    color: var(--text-inverse);
+    font-size: 2.2rem;
+    margin: 0;
+    font-family: 'Playfair Display', serif;
+    letter-spacing: -0.02em;
 }
 
 .footer-desc {
-    color: #4A584C;
-    font-size: 1.05rem;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1rem;
     margin-bottom: 30px;
-    line-height: 1.8;
-    max-width: 300px;
+    line-height: 1.6;
+    max-width: 320px;
 }
 
 .social-links {
@@ -98,71 +52,95 @@
 }
 
 .social-link {
-    width: 45px;
-    height: 45px;
+    width: 42px;
+    height: 42px;
     border-radius: 50%;
-    background-color: rgba(20, 70, 27, 0.05);
+    background-color: rgba(255, 255, 255, 0.05);
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--text-primary);
+    color: var(--text-inverse);
     transition: var(--transition);
-    border: 1px solid rgba(20, 70, 27, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .social-link:hover {
-    background-color: var(--metallic-gold);
-    color: #FFFFFF;
-    transform: translateY(-5px);
-    box-shadow: var(--glow);
+    background-color: var(--accent);
+    color: var(--primary);
+    border-color: var(--accent);
+    transform: translateY(-4px);
 }
 
-.footer-links h3, .footer-contact h3 {
-    color: var(--dark-green);
-    font-size: 1.3rem;
+.footer-links h3, .footer-newsletter h3 {
+    color: var(--accent);
+    font-size: 1.25rem;
     margin-bottom: 25px;
     font-family: 'Playfair Display', serif;
 }
 
-.footer-links ul, .footer-contact ul {
+.footer-links ul {
     display: flex;
     flex-direction: column;
     gap: 15px;
 }
 
 .footer-links a {
-    color: #4A584C;
+    color: rgba(255, 255, 255, 0.8);
     transition: var(--transition);
-    font-size: 1.05rem;
+    font-size: 1rem;
 }
 
 .footer-links a:hover {
-    color: var(--metallic-gold);
+    color: var(--accent);
     padding-left: 5px;
 }
 
-.footer-contact li {
+.newsletter-form {
     display: flex;
-    align-items: flex-start;
-    gap: 15px;
-    color: #4A584C;
-    font-size: 1.05rem;
-    line-height: 1.6;
+    flex-direction: column;
+    gap: 12px;
 }
 
-.footer-contact i {
-    color: var(--metallic-gold);
-    margin-top: 4px;
+.newsletter-form input {
+    padding: 14px 20px;
+    border-radius: var(--radius-pill);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text-inverse);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    outline: none;
+    transition: var(--transition);
+}
+
+.newsletter-form input:focus {
+    border-color: var(--accent);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.newsletter-form .btn {
+    background-color: var(--accent);
+    color: var(--primary);
+    width: 100%;
+}
+
+.newsletter-form .btn:hover {
+    background-color: #f0b532; /* Slightly lighter gold */
+    box-shadow: 0 4px 15px rgba(220, 161, 36, 0.3);
 }
 
 .footer-bottom {
     padding-top: 40px;
-    border-top: 1px solid var(--glass-border);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.95rem;
+}
+
+.footer-bottom-flex {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: #4A584C;
-    font-size: 0.95rem;
+    margin-bottom: 20px;
 }
 
 .footer-bottom-links {
@@ -175,19 +153,23 @@
 }
 
 .footer-bottom-links a:hover {
-    color: var(--metallic-gold);
+    color: var(--accent);
+}
+
+.footer-disclaimer {
+    font-size: 0.75rem;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.4);
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 @media (max-width: 992px) {
-    .footer-massive-cta {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 40px;
-    }
     .footer-grid {
         grid-template-columns: 1fr 1fr;
     }
-    .footer-brand {
+    .footer-brand, .footer-newsletter {
         grid-column: 1 / -1;
     }
 }
@@ -197,12 +179,9 @@
         grid-template-columns: 1fr;
         gap: 40px;
     }
-    .footer-bottom {
+    .footer-bottom-flex {
         flex-direction: column;
         gap: 20px;
         text-align: center;
-    }
-    .footer-logo-image {
-        height: 80px; /* Responsive size for mobile */
     }
 }
