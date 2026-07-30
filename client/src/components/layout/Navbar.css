@@ -1,0 +1,343 @@
+/* ─────────────────────────────────────────────
+   VEDIKCARE — Premium Floating Navbar
+   Light theme: cream/ivory pill with green & gold
+   ───────────────────────────────────────────── */
+
+/* ── Base floating pill ── */
+.minimal-navbar {
+    position: fixed;
+    top: 18px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 94%;
+    max-width: 1180px;
+    z-index: 1000;
+    padding: 14px 28px;
+    border-radius: 100px;
+    transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+    /* Unscrolled: fully transparent */
+    background: transparent;
+}
+
+/* ── Scrolled state — glass pill ── */
+.minimal-navbar.scrolled {
+    background: rgba(250, 248, 245, 0.92);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1.5px solid rgba(20, 70, 27, 0.1);
+    box-shadow:
+        0 4px 24px rgba(20, 70, 27, 0.08),
+        0 1px 4px rgba(0, 0, 0, 0.04),
+        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    padding: 10px 24px;
+}
+
+/* ── Unscrolled on dark hero (home hero might be dark) ── */
+.minimal-navbar:not(.scrolled) .minimal-logo,
+.minimal-navbar:not(.scrolled) .logo-leaf,
+.minimal-navbar:not(.scrolled) .nav-link,
+.minimal-navbar:not(.scrolled) .minimal-action-icon,
+.minimal-navbar:not(.scrolled) .hamburger {
+    color: #14461B; /* Default to dark; hero sections can override */
+}
+
+/* ── Grid layout: Left | Logo | Right ── */
+.nav-container {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+}
+
+.left-links  { justify-content: flex-start; }
+.right-links { justify-content: flex-end; }
+
+/* ── Logo ── */
+.minimal-logo {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.45rem;
+    font-weight: 700;
+    color: #14461B;
+    text-decoration: none;
+    letter-spacing: -0.02em;
+    transition: all 0.3s ease;
+}
+
+.minimal-logo:hover {
+    color: #DCA124;
+}
+
+.logo-leaf {
+    color: #14461B;
+    transition: all 0.35s ease;
+}
+
+.minimal-logo:hover .logo-leaf {
+    color: #DCA124;
+    transform: rotate(-15deg) scale(1.1);
+}
+
+/* ── Nav Links ── */
+.nav-links {
+    display: flex;
+    gap: 6px;
+}
+
+.nav-link {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: #14461B;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 8px 16px;
+    border-radius: 100px;
+    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+    position: relative;
+    text-decoration: none;
+}
+
+.nav-link:hover {
+    background: rgba(20, 70, 27, 0.07);
+    color: #14461B;
+}
+
+.nav-link.active {
+    background: rgba(20, 70, 27, 0.1);
+    color: #14461B;
+}
+
+/* Active dot indicator */
+.nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: #DCA124;
+}
+
+/* ── Right actions ── */
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* Cart pill button */
+.minimal-action-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: #FFFFFF;
+    background: linear-gradient(135deg, #14461B 0%, #1E6127 100%);
+    padding: 8px 18px;
+    border-radius: 100px;
+    transition: all 0.35s cubic-bezier(0.165, 0.84, 0.44, 1);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    text-decoration: none;
+    box-shadow: 0 2px 10px rgba(20,70,27,0.25);
+}
+
+.minimal-action-btn:hover {
+    background: linear-gradient(135deg, #DCA124 0%, #B87E0E 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(220,161,36,0.35);
+    color: #FFFFFF;
+}
+
+/* User icon button */
+.minimal-action-icon {
+    color: #14461B;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    border: 1.5px solid rgba(20, 70, 27, 0.18);
+    background: rgba(255,255,255,0.6);
+}
+
+.minimal-action-icon:hover {
+    color: #FFFFFF;
+    background: #14461B;
+    border-color: #14461B;
+    transform: scale(1.08);
+}
+
+/* ── Hamburger ── */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    color: #14461B;
+    transition: all 0.3s ease;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1.5px solid rgba(20,70,27,0.15);
+    background: rgba(255,255,255,0.6);
+}
+
+.hamburger:hover {
+    background: #14461B;
+    color: #FFFFFF;
+    border-color: #14461B;
+}
+
+/* ─────────────────────────────────────────────
+   MOBILE FULL-SCREEN MENU
+   ───────────────────────────────────────────── */
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
+    background: linear-gradient(160deg, #FAF8F5 0%, #EFF4EC 100%);
+    z-index: 1100;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    transform: translateX(100%);
+    visibility: hidden;
+    pointer-events: none;
+    transition:
+        transform 0.45s cubic-bezier(0.165, 0.84, 0.44, 1),
+        visibility 0s linear 0.45s;
+    overflow: hidden;
+}
+
+/* Background accent orbs */
+.mobile-menu::before,
+.mobile-menu::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+}
+.mobile-menu::before {
+    width: 400px;
+    height: 400px;
+    top: -100px;
+    right: -100px;
+    background: radial-gradient(circle, rgba(20,70,27,0.06) 0%, transparent 70%);
+}
+.mobile-menu::after {
+    width: 300px;
+    height: 300px;
+    bottom: -80px;
+    left: -80px;
+    background: radial-gradient(circle, rgba(220,161,36,0.07) 0%, transparent 70%);
+}
+
+.mobile-menu.active {
+    transform: translateX(0);
+    visibility: visible;
+    pointer-events: auto;
+    transition:
+        transform 0.45s cubic-bezier(0.165, 0.84, 0.44, 1),
+        visibility 0s linear 0s;
+}
+
+.mobile-nav-links {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.mobile-nav-link {
+    font-size: 2.6rem;
+    font-weight: 600;
+    color: #14461B;
+    font-family: 'Playfair Display', serif;
+    transition: all 0.35s ease;
+    opacity: 0.85;
+    letter-spacing: -0.02em;
+}
+
+.mobile-nav-link:hover {
+    color: #DCA124;
+    opacity: 1;
+    transform: translateX(8px);
+}
+
+.close-menu {
+    position: absolute;
+    top: 28px;
+    right: 28px;
+    color: #14461B;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    border: 1.5px solid rgba(20, 70, 27, 0.18);
+    background: rgba(255,255,255,0.7);
+    z-index: 1;
+}
+
+.close-menu:hover {
+    color: #FFFFFF;
+    background: #14461B;
+    border-color: #14461B;
+    transform: rotate(90deg);
+}
+
+.mobile-menu-actions {
+    margin-top: 48px;
+    position: relative;
+    z-index: 1;
+}
+
+/* ─────────────────────────────────────────────
+   RESPONSIVE
+   ───────────────────────────────────────────── */
+@media (max-width: 992px) {
+    .nav-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .left-links { display: none; }
+
+    .nav-actions .nav-link,
+    .nav-actions .minimal-action-btn,
+    .nav-actions .minimal-action-icon {
+        display: none;
+    }
+
+    .hamburger { display: flex; }
+}
+
+@media (max-width: 480px) {
+    .minimal-navbar {
+        top: 12px;
+        padding: 11px 18px;
+        width: 92%;
+    }
+
+    .minimal-logo { font-size: 1.25rem; }
+
+    .mobile-nav-link { font-size: 2rem; }
+}

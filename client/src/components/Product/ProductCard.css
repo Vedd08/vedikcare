@@ -1,0 +1,329 @@
+/* ─────────────────────────────────────────
+   PRODUCT GRID  (shared — used on Home + Shop)
+───────────────────────────────────────── */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px; /* tight seam — cards touch */
+    margin-top: 60px;
+    align-items: start;
+}
+
+@media (max-width: 992px) {
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 580px) {
+    .products-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+}
+
+/* ─────────────────────────────────────────
+   PRODUCT CARD
+───────────────────────────────────────── */
+.pc-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-color: #FFFFFF;
+    border: 1px solid rgba(20, 70, 27, 0.12);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+    cursor: pointer;
+    transition: border-color 0.35s ease, transform 0.35s ease, box-shadow 0.35s ease;
+    overflow: hidden;
+}
+
+.pc-card:hover {
+    border-color: rgba(220, 161, 36, 0.4);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+    z-index: 1; /* pop above adjacent cards */
+}
+
+/* Badge */
+.pc-badge {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    background-color: var(--metallic-gold);
+    color: #FFFFFF;
+    padding: 5px 14px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    z-index: 10;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* ─── Image ─── */
+.pc-image-wrap {
+    position: relative;
+    width: 100%;
+    height: 280px;
+    overflow: hidden;
+    background-color: #F4F6F3;
+}
+
+.pc-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.7s cubic-bezier(0.25, 1, 0.5, 1),
+                filter 0.5s ease;
+    filter: brightness(1);
+}
+
+.pc-card:hover .pc-image {
+    transform: scale(1.06);
+    filter: brightness(0.85); /* gentle overlay contrast */
+}
+
+/* ─── Hover Overlay (ingredients / benefits) ─── */
+.pc-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 16px;
+    padding: 24px;
+    background: linear-gradient(
+        to top,
+        rgba(250, 248, 245, 0.95) 0%,
+        rgba(250, 248, 245, 0.7) 60%,
+        transparent 100%
+    );
+    pointer-events: none;
+}
+
+.pc-overlay-block {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.pc-overlay-label {
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--dark-green);
+    font-family: 'Montserrat', sans-serif;
+}
+
+.pc-overlay-text {
+    font-size: 0.82rem;
+    color: rgba(26, 40, 30, 0.85);
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* ─── Body ─── */
+.pc-body {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 24px;
+    gap: 20px;
+}
+
+.pc-header {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* Category pill */
+.pc-meta {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.pc-leaf {
+    color: var(--metallic-gold);
+    opacity: 0.7;
+}
+
+.pc-category {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(20, 70, 27, 0.65);
+    font-family: 'Montserrat', sans-serif;
+}
+
+.pc-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.45rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 0;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+}
+
+.pc-desc {
+    font-size: 0.85rem;
+    color: rgba(74, 88, 76, 0.85);
+    line-height: 1.6;
+    margin: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* ─── Footer (price + actions) ─── */
+.pc-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: auto;
+    padding-top: 18px;
+    border-top: 1px solid rgba(20, 70, 27, 0.1);
+}
+
+.pc-price {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #B87E0E;
+    letter-spacing: -0.02em;
+    flex-shrink: 0;
+}
+
+.pc-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Quantity selector */
+.pc-qty {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    border: 1px solid rgba(20, 70, 27, 0.2);
+    border-radius: 8px;
+    overflow: hidden;
+    height: 40px;
+}
+
+.pc-qty-btn {
+    width: 36px;
+    height: 40px;
+    background: transparent;
+    border: none;
+    color: var(--text-primary);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.pc-qty-btn:hover {
+    background-color: var(--dark-green);
+    color: #FFFFFF;
+}
+
+.pc-qty-val {
+    min-width: 32px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--text-primary);
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Add to cart button */
+.pc-add-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    height: 40px;
+    padding: 0 18px;
+    background-color: var(--dark-green);
+    color: #FFFFFF;
+    border: none;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 0.04em;
+    font-family: 'Montserrat', sans-serif;
+    cursor: pointer;
+    transition: background 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+    white-space: nowrap;
+}
+
+.pc-add-btn:hover {
+    background-color: var(--metallic-gold);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(220, 161, 36, 0.35);
+}
+
+.pc-coming-soon-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--metallic-gold);
+    letter-spacing: -0.02em;
+    width: 100%;
+    text-align: center;
+    padding: 8px 0;
+}
+
+/* ─────────────────────────────────────────
+   EMPTY / LOADING STATE
+───────────────────────────────────────── */
+.products-empty {
+    text-align: center;
+    width: 100%;
+    padding: 80px 20px;
+    color: #4A584C;
+    grid-column: 1 / -1;
+}
+
+.products-empty h3 {
+    font-size: 1.5rem;
+    color: var(--text-primary);
+    margin-bottom: 10px;
+}
+
+/* ─────────────────────────────────────────
+   RESPONSIVE
+───────────────────────────────────────── */
+@media (max-width: 580px) {
+    .pc-image-wrap {
+        height: 220px;
+    }
+
+    .pc-body {
+        padding: 18px;
+    }
+
+    .pc-footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 14px;
+    }
+
+    .pc-actions {
+        width: 100%;
+    }
+
+    .pc-add-btn {
+        flex: 1;
+        justify-content: center;
+    }
+}
