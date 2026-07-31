@@ -14,6 +14,8 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import JuiceToast from './components/layout/JuiceToast';
 
+import ScrollToTop from './components/layout/ScrollToTop';
+
 function App() {
   // Initialize Lenis Smooth Scrolling
   useEffect(() => {
@@ -22,6 +24,9 @@ function App() {
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       smooth: true,
     });
+    
+    // Attach to window so ScrollToTop can access it to instantly reset scroll on route change
+    window.lenis = lenis;
 
     function raf(time) {
       lenis.raf(time);
@@ -37,6 +42,7 @@ function App() {
 
   return (
     <Router>
+      <ScrollToTop />
       <div className="app-container">
         <Navbar />
         <JuiceToast />

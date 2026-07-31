@@ -15,8 +15,6 @@ const ProductDetail = () => {
   const { addToCart } = useCart();
 
   useEffect(() => {
-    // Scroll to top when page loads
-    window.scrollTo(0, 0);
     
     const fetchProduct = async () => {
       const MOCK_PRODUCT = {
