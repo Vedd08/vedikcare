@@ -23,6 +23,16 @@ const Footer = () => {
               <a href="#" className="social-link"><i className="fa-brands fa-facebook-f"></i></a>
               <a href="#" className="social-link"><i className="fa-brands fa-twitter"></i></a>
             </div>
+            <div className="footer-contact" style={{ marginTop: '1.5rem', fontSize: '0.9rem', opacity: 0.9 }}>
+              <p style={{ display: 'flex', alignItems: 'flex-start', gap: '8px', marginBottom: '8px' }}>
+                <span style={{ color: 'var(--accent)', marginTop: '2px' }}>📍</span>
+                602 Swarna Villa - 1, Vesu, Surat 395007
+              </p>
+              <p style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <span style={{ color: 'var(--accent)' }}>📞</span>
+                +91 9648543421
+              </p>
+            </div>
           </div>
 
           <div className="footer-links">

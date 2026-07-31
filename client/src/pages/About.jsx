@@ -109,11 +109,7 @@ const About = () => {
               <motion.p variants={fadeUp} className="body-text-premium">
                 With a deep-rooted passion for holistic health and sustainable living, Sakshi Singla founded VedikCare to bridge the gap between traditional Ayurvedic wisdom and modern lifestyles.
               </motion.p>
-              
-              <motion.ul variants={fadeUp} className="founder-highlights-premium">
-                <li><Leaf size={20} /> <span>Certified Ayurvedic Nutritionist</span></li>
-                <li><Heart size={20} /> <span>Dedicated to Organic & Pure Sourcing</span></li>
-              </motion.ul>
+
             </motion.div>
 
             <motion.div 

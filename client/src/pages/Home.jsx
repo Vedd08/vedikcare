@@ -23,13 +23,6 @@ const Home = () => {
   const containerRef = useRef(null);
   const [products, setProducts] = useState([]);
   const [expandedBenefit, setExpandedBenefit] = useState(0);
-  const [currentTestimonial, setCurrentTestimonial] = useState(0);
-
-  const testimonials = [
-    { text: "Finally, a protein powder that doesn't spike my blood sugar. The chocolate flavor is incredibly rich, and I feel energized all day without the crash.", author: "Rajesh M., Verified Buyer" },
-    { text: "I've tried many diabetic supplements, but VedikCare is the only one that tastes great and actually helps keep my levels stable.", author: "Sunita K., Wellness Enthusiast" },
-    { text: "The blend of Ayurvedic ingredients and modern protein is exactly what I was looking for. Highly recommended!", author: "Vikram S., Fitness Coach" }
-  ];
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -107,6 +100,44 @@ const Home = () => {
             >
               <img src="/image/chocolate_diabetic_protein.png" alt="VedikCare Diabetic Protein Powder" className="hero-product-img" />
               <div className="hero-image-backdrop"></div>
+              {/* Unique Rotating Stamp */}
+              <div className="coming-soon-stamp" style={{
+                position: 'absolute',
+                bottom: '20px',
+                right: '20px',
+                width: '130px',
+                height: '130px',
+                zIndex: 10,
+                background: 'rgba(255, 255, 255, 0.85)',
+                backdropFilter: 'blur(10px)',
+                borderRadius: '50%',
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                boxShadow: '0 10px 30px rgba(0,0,0,0.15)'
+              }}>
+                <style>
+                  {`
+                    @keyframes spin-stamp {
+                      from { transform: rotate(0deg); }
+                      to { transform: rotate(360deg); }
+                    }
+                  `}
+                </style>
+                <svg viewBox="0 0 100 100" style={{ width: '100%', height: '100%', animation: 'spin-stamp 15s linear infinite' }}>
+                  <defs>
+                    <path id="textCircle" d="M 50, 50 m -35, 0 a 35,35 0 1,1 70,0 a 35,35 0 1,1 -70,0" />
+                  </defs>
+                  <text fontSize="12" fontWeight="700" fill="var(--primary)" letterSpacing="1">
+                    <textPath href="#textCircle" startOffset="0%">
+                      • COMING SOON • VEDIKCARE • COMING SOON • VEDIKCARE 
+                    </textPath>
+                  </text>
+                </svg>
+                <div style={{ position: 'absolute', color: 'var(--accent)', fontSize: '24px' }}>
+                  ✦
+                </div>
+              </div>
             </motion.div>
           </div>
         </div>
@@ -168,7 +199,7 @@ const Home = () => {
             >
               <div className="benefits-list">
                 {[
-                  { title: "Blood Sugar Management", desc: "Jamun and Karela extracts naturally support glucose metabolism." },
+                  { title: "Blood Sugar Management", desc: "Vijaysar, fenugreek, ajwain, and moringa naturally support glucose metabolism." },
                   { title: "Sustained Energy", desc: "High-quality pea protein provides a slow release of energy throughout the day." },
                   { title: "Digestive Health", desc: "Enriched with digestive enzymes and fibers to ensure maximum absorption without bloating." }
                 ].map((benefit, i) => (
@@ -207,47 +238,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* ── Testimonials ── */}
-      <section className="testimonials-section">
-        <div className="container" style={{ position: 'relative' }}>
-          <AnimatePresence mode="wait">
-            <motion.div 
-              key={currentTestimonial}
-              className="testimonial-card card"
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.95 }}
-              transition={{ duration: 0.4 }}
-              style={{ position: 'relative' }}
-            >
-              <div className="stars">
-                <Star fill="var(--accent)" color="var(--accent)" size={20} />
-                <Star fill="var(--accent)" color="var(--accent)" size={20} />
-                <Star fill="var(--accent)" color="var(--accent)" size={20} />
-                <Star fill="var(--accent)" color="var(--accent)" size={20} />
-                <Star fill="var(--accent)" color="var(--accent)" size={20} />
-              </div>
-              <h3>"{testimonials[currentTestimonial].text}"</h3>
-              <p className="author">— {testimonials[currentTestimonial].author}</p>
-            </motion.div>
-          </AnimatePresence>
-          
-          <div style={{ display: 'flex', justifyContent: 'center', gap: '12px', marginTop: '30px' }}>
-            {testimonials.map((_, idx) => (
-              <button 
-                key={idx}
-                onClick={() => setCurrentTestimonial(idx)}
-                style={{
-                  width: '12px', height: '12px', borderRadius: '50%',
-                  background: currentTestimonial === idx ? 'var(--primary)' : 'rgba(20, 70, 27, 0.2)',
-                  border: 'none', cursor: 'pointer', transition: 'all 0.3s'
-                }}
-                aria-label={`Go to testimonial ${idx + 1}`}
-              />
-            ))}
-          </div>
-        </div>
-      </section>
+
 
       {/* ── Featured Products / Simple Pricing ── */}
       <section className="featured-section">

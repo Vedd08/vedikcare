@@ -99,23 +99,18 @@ const Products = () => {
               <tbody>
                 <tr>
                   <td>Blood Sugar Support</td>
-                  <td><span className="text-gold">Jamun, Karela & Vijaysar Enriched</span></td>
+                  <td><span className="text-gold">VijaySar Enrich, fenugreek, Ajwain, Moringa</span></td>
                   <td>No Sugar Management Botanicals</td>
                 </tr>
                 <tr>
-                  <td>Glycemic Impact</td>
-                  <td><span className="text-gold">Low Glycemic Index (No Spikes)</span></td>
+                  <td>Sweetener</td>
+                  <td><span className="text-gold">Monk Fruit Extract</span></td>
                   <td>High Spike Risk / Added Sugar</td>
                 </tr>
                 <tr>
                   <td>Digestibility</td>
-                  <td><span className="text-gold">Herbal Blend (No Bloating)</span></td>
+                  <td><span className="text-gold">Herbal Blend Prebiotics</span></td>
                   <td>Heavy Synthetic Fillers</td>
-                </tr>
-                <tr>
-                  <td>Sweetener</td>
-                  <td><span className="text-gold">Zero Added Sugar (Stevia/Raw Herbs)</span></td>
-                  <td>Artificial Sweeteners / Maltodextrin</td>
                 </tr>
               </tbody>
             </table>
