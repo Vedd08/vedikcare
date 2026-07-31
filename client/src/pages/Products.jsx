@@ -126,7 +126,7 @@ const Products = () => {
                 </tr>
                 <tr>
                   <td>Digestibility</td>
-                  <td><span className="text-gold">Herbal Blend Prebiotics</span></td>
+                  <td><span className="text-gold">Prebiotic</span></td>
                   <td>Heavy Synthetic Fillers</td>
                 </tr>
               </tbody>
