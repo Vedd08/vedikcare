@@ -24,11 +24,11 @@ const Footer = () => {
               <a href="#" className="social-link"><i className="fa-brands fa-twitter"></i></a>
             </div>
             <div className="footer-contact" style={{ marginTop: '1.5rem', fontSize: '0.9rem', opacity: 0.9 }}>
-              <p style={{ display: 'flex', alignItems: 'flex-start', gap: '8px', marginBottom: '8px' }}>
+              <p style={{ display: 'flex', alignItems: 'flex-start', gap: '8px', marginBottom: '8px', color: '#ffffff' }}>
                 <span style={{ color: 'var(--accent)', marginTop: '2px' }}>📍</span>
                 602 Swarna Villa - 1, Vesu, Surat 395007
               </p>
-              <p style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+              <p style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#ffffff' }}>
                 <span style={{ color: 'var(--accent)' }}>📞</span>
                 +91 9648543421
               </p>
@@ -67,13 +67,13 @@ const Footer = () => {
 
         <div className="footer-bottom">
           <div className="footer-bottom-flex">
-            <p>&copy; {new Date().getFullYear()} VedikCare. All rights reserved.</p>
+            <p style={{ color: '#ffffff' }}>&copy; {new Date().getFullYear()} VedikCare. All rights reserved.</p>
             <div className="footer-bottom-links">
               <Link to="/privacy">Privacy Policy</Link>
               <Link to="/terms">Terms of Service</Link>
             </div>
           </div>
-          <p className="footer-disclaimer">
+          <p className="footer-disclaimer" style={{ color: 'rgba(255, 255, 255, 0.7)' }}>
             Disclaimer: These statements have not been evaluated by the FDA or Ayush. This product is not intended to diagnose, treat, cure, or prevent any disease. Please consult your physician before use.
           </p>
         </div>
