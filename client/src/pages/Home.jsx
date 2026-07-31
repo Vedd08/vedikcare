@@ -22,7 +22,6 @@ const staggerContainer = {
 const Home = () => {
   const containerRef = useRef(null);
   const [products, setProducts] = useState([]);
-  const [expandedBenefit, setExpandedBenefit] = useState(0);
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -55,11 +54,28 @@ const Home = () => {
 
   useEffect(() => {
     const fetchProducts = async () => {
+      const MOCK_PRODUCT = {
+        _id: 'mock-1',
+        name: 'VedikCare Diabetic Protein Powder',
+        description: 'Ayurvedic diabetic protein powder crafted with Jamun Seed, Karela, and Vijaysar to support healthy blood sugar levels and daily strength.',
+        image: '/image/chocolate_diabetic_protein.png',
+        category: 'Diabetic Care',
+        badge: 'Signature Blend',
+        isComingSoon: true,
+        ingredients: 'Pea Protein, Jamun Seed, Karela, Vijaysar, Monk Fruit Extract, Prebiotics',
+        benefits: 'Blood Sugar Management, Sustained Energy, Digestive Health'
+      };
+      
       try {
         const { data } = await axios.get(`${import.meta.env.VITE_API_URL}/api/products`);
-        setProducts(data.slice(0, 3));
+        if (data && data.length > 0) {
+          setProducts(data.slice(0, 3));
+        } else {
+          setProducts([MOCK_PRODUCT]);
+        }
       } catch (error) {
         console.error('Error fetching products:', error);
+        setProducts([MOCK_PRODUCT]);
       }
     };
     fetchProducts();
@@ -205,30 +221,19 @@ const Home = () => {
                 ].map((benefit, i) => (
                   <motion.div 
                     key={i} 
-                    className={`benefit-item ${expandedBenefit === i ? 'active' : ''}`} 
+                    className="benefit-item active" 
                     variants={fadeUp}
-                    onClick={() => setExpandedBenefit(expandedBenefit === i ? null : i)}
-                    style={{ cursor: 'pointer', padding: '16px', background: expandedBenefit === i ? 'var(--surface-white)' : 'transparent', borderRadius: '16px', border: expandedBenefit === i ? '1px solid rgba(20, 70, 27, 0.1)' : '1px solid transparent', transition: 'background 0.3s' }}
+                    style={{ padding: '16px', background: 'var(--surface-white)', borderRadius: '16px', border: '1px solid rgba(20, 70, 27, 0.1)' }}
                     layout
                   >
-                    <motion.div layout className="benefit-dot" style={{ backgroundColor: expandedBenefit === i ? 'var(--accent)' : 'rgba(20, 70, 27, 0.2)', transition: 'background 0.3s' }}></motion.div>
+                    <div className="benefit-dot" style={{ backgroundColor: 'var(--accent)' }}></div>
                     <div style={{ flex: 1 }}>
-                      <motion.h4 layout style={{ color: expandedBenefit === i ? 'var(--primary)' : 'rgba(74, 88, 76, 0.8)', transition: 'color 0.3s', margin: 0 }}>
+                      <h4 style={{ color: 'var(--primary)', margin: 0 }}>
                         {benefit.title}
-                      </motion.h4>
-                      <AnimatePresence>
-                        {expandedBenefit === i && (
-                          <motion.p
-                            initial={{ opacity: 0, height: 0, marginTop: 0 }}
-                            animate={{ opacity: 1, height: 'auto', marginTop: 12 }}
-                            exit={{ opacity: 0, height: 0, marginTop: 0 }}
-                            transition={{ duration: 0.3 }}
-                            style={{ overflow: 'hidden', margin: 0 }}
-                          >
-                            {benefit.desc}
-                          </motion.p>
-                        )}
-                      </AnimatePresence>
+                      </h4>
+                      <p style={{ margin: 0, marginTop: 12 }}>
+                        {benefit.desc}
+                      </p>
                     </div>
                   </motion.div>
                 ))}

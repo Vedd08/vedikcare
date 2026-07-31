@@ -19,12 +19,29 @@ const ProductDetail = () => {
     window.scrollTo(0, 0);
     
     const fetchProduct = async () => {
+      const MOCK_PRODUCT = {
+        _id: 'mock-1',
+        name: 'VedikCare Diabetic Protein Powder',
+        description: 'Ayurvedic diabetic protein powder crafted with Jamun Seed, Karela, and Vijaysar to support healthy blood sugar levels and daily strength.',
+        image: '/image/chocolate_diabetic_protein.png',
+        category: 'Diabetic Care',
+        badge: 'Signature Blend',
+        isComingSoon: true,
+        ingredients: 'Pea Protein, Jamun Seed, Karela, Vijaysar, Monk Fruit Extract, Prebiotics',
+        benefits: 'Blood Sugar Management, Sustained Energy, Digestive Health'
+      };
+
       try {
         const { data } = await axios.get(`${import.meta.env.VITE_API_URL}/api/products/${id}`);
-        setProduct(data);
+        if (data && data._id) {
+          setProduct(data);
+        } else {
+          if (id === 'mock-1') setProduct(MOCK_PRODUCT);
+        }
         setLoading(false);
       } catch (error) {
         console.error('Error fetching product:', error);
+        if (id === 'mock-1') setProduct(MOCK_PRODUCT);
         setLoading(false);
       }
     };
