@@ -6,7 +6,6 @@ import { useCart } from '../../context/CartContext';
 import './Navbar.css';
 
 import mainLogo from '../../assets/VedikCare-removebg-preview.png';
-import smallLogo from '../../assets/vc-removebg-preview.png';
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -70,8 +69,7 @@ const Navbar = () => {
 
         {/* Center Logo */}
         <Link to="/" className="minimal-logo">
-          <img src={smallLogo} alt="VC Icon" className="nav-icon-image" />
-          <img src={mainLogo} alt="VedikCare Text" className="nav-text-image" />
+          <img src={mainLogo} alt="VedikCare" className="nav-logo-image" />
         </Link>
         
         {/* Right Actions */}

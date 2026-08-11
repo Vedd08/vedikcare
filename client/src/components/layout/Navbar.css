@@ -69,24 +69,15 @@
     color: var(--accent);
 }
 
-.nav-icon-image {
-    height: 70px;
-    width: auto;
-    object-fit: contain;
-    margin: -15px 0;
-    transition: all 0.3s ease;
-}
-
-.nav-text-image {
+.nav-logo-image {
     height: 180px;
     width: auto;
     object-fit: contain;
-    margin: -70px 0 -70px -15px; /* Pull text closer to icon */
+    margin: -70px 0;
     transition: all 0.3s ease;
 }
 
-.minimal-logo:hover .nav-icon-image,
-.minimal-logo:hover .nav-text-image {
+.minimal-logo:hover .nav-logo-image {
     transform: scale(1.05);
 }
 
@@ -360,12 +351,9 @@
 
     .minimal-logo { font-size: 1.25rem; }
     
-    .nav-icon-image {
-        height: 60px;
-    }
-    .nav-text-image {
+    .nav-logo-image {
         height: 150px;
-        margin: -60px 0 -60px -10px;
+        margin: -60px 0;
     }
 
     .mobile-nav-link { font-size: 2rem; }
