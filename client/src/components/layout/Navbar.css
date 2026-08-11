@@ -70,9 +70,10 @@
 }
 
 .nav-logo-image {
-    height: 38px;
+    height: 180px;
     width: auto;
     object-fit: contain;
+    margin: -70px 0;
     transition: all 0.3s ease;
 }
 
@@ -349,7 +350,8 @@
     }
     .mobile-logo {
         display: block;
-        height: 36px;
+        height: 80px;
+        margin: -20px 0;
     }
 }
 

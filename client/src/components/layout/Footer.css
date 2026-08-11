@@ -31,10 +31,10 @@
 }
 
 .footer-logo-image {
-    height: 70px;
+    height: 180px;
     width: auto;
     object-fit: contain;
-    margin-bottom: 5px;
+    margin: -60px 0;
 }
 
 .footer-desc {
