@@ -108,10 +108,8 @@ const ProductDetail = () => {
             </div>
 
             <h1 className="pd-title">{product.name}</h1>
-            {product.isComingSoon ? (
+            {product.isComingSoon && (
               <p className="pd-price" style={{ color: 'var(--metallic-gold)' }}>Coming Soon</p>
-            ) : (
-              <p className="pd-price">₹{product.price}</p>
             )}
             
             <p className="pd-description">{product.description}</p>
@@ -178,7 +176,7 @@ const ProductDetail = () => {
                 
                 <button className="pd-add-to-cart" onClick={() => addToCart(product, quantity)}>
                   <ShoppingBag size={20} />
-                  <span>Add to Cart - ₹{product.price * quantity}</span>
+                  <span>Add to Cart</span>
                 </button>
               </div>
             )}

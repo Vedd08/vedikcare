@@ -69,6 +69,21 @@
     color: var(--accent);
 }
 
+.nav-logo-image {
+    height: 38px;
+    width: auto;
+    object-fit: contain;
+    transition: all 0.3s ease;
+}
+
+.minimal-logo:hover .nav-logo-image {
+    transform: scale(1.05);
+}
+
+.mobile-logo {
+    display: none;
+}
+
 .logo-leaf {
     color: var(--primary);
     transition: all 0.35s ease;
@@ -328,6 +343,14 @@
     }
 
     .hamburger { display: flex; }
+
+    .desktop-logo {
+        display: none;
+    }
+    .mobile-logo {
+        display: block;
+        height: 36px;
+    }
 }
 
 @media (max-width: 480px) {

@@ -94,7 +94,7 @@ const ProductCard = ({ product }) => {
             <div className="pc-coming-soon-text">Coming Soon</div>
           ) : (
             <>
-              <span className="pc-price">₹{product.price}</span>
+              {/* <span className="pc-price">₹{product.price}</span> */}
 
               <div className="pc-actions">
                 {/* Quantity */}

@@ -13,7 +13,7 @@ const Footer = () => {
         <div className="footer-grid">
           <div className="footer-brand">
             <Link to="/" className="logo">
-              <h2 className="footer-logo-text">VedikCare</h2>
+              <img src={logoImage} alt="VedikCare" className="footer-logo-image" />
             </Link>
             <p className="footer-desc">
               Elevating wellness through ancient Ayurvedic wisdom and uncompromising premium organic sourcing for diabetic care.

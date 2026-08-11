@@ -5,6 +5,9 @@ import { motion } from 'framer-motion';
 import { useCart } from '../../context/CartContext';
 import './Navbar.css';
 
+import mainLogo from '../../assets/VedikCare-removebg-preview.png';
+import smallLogo from '../../assets/vc-removebg-preview.png';
+
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -67,8 +70,8 @@ const Navbar = () => {
 
         {/* Center Logo */}
         <Link to="/" className="minimal-logo">
-          <Leaf size={20} className="logo-leaf" />
-          <span>VedikCare</span>
+          <img src={mainLogo} alt="VedikCare" className="nav-logo-image desktop-logo" />
+          <img src={smallLogo} alt="VC" className="nav-logo-image mobile-logo" />
         </Link>
         
         {/* Right Actions */}

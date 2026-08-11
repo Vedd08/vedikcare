@@ -80,7 +80,7 @@ const Cart = () => {
                           <Plus size={14} />
                         </button>
                       </div>
-                      <p className="ci-price">₹{item.price * item.quantity}</p>
+                      {/* Price hidden */}
                     </div>
                   </div>
                 </motion.div>
@@ -92,26 +92,9 @@ const Cart = () => {
           <div className="cart-summary-section">
             <div className="cart-summary-card">
               <h3>Order Summary</h3>
-              <div className="summary-details">
-                <div className="summary-row">
-                  <span>Subtotal</span>
-                  <span>₹{subtotal}</span>
-                </div>
-                <div className="summary-row">
-                  <span>Shipping</span>
-                  <span>{shipping === 0 ? <span className="free">FREE</span> : `₹${shipping}`}</span>
-                </div>
-                {shipping > 0 && (
-                  <p className="shipping-info">Free shipping on orders above ₹1000</p>
-                )}
-                <div className="summary-divider"></div>
-                <div className="summary-row total">
-                  <span>Total</span>
-                  <span>₹{total}</span>
-                </div>
-              </div>
+              <p style={{marginBottom: '20px', color: 'var(--text-secondary)'}}>Pricing details will be provided at the next step.</p>
               <button className="checkout-btn">
-                Proceed to Checkout
+                Proceed
                 <ArrowRight size={18} />
               </button>
               <Link to="/shop" className="continue-shopping">
