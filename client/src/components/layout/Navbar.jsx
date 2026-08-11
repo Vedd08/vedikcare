@@ -70,8 +70,8 @@ const Navbar = () => {
 
         {/* Center Logo */}
         <Link to="/" className="minimal-logo">
-          <img src={mainLogo} alt="VedikCare" className="nav-logo-image desktop-logo" />
-          <img src={smallLogo} alt="VC" className="nav-logo-image mobile-logo" />
+          <img src={smallLogo} alt="VC Icon" className="nav-icon-image" />
+          <img src={mainLogo} alt="VedikCare Text" className="nav-text-image" />
         </Link>
         
         {/* Right Actions */}
